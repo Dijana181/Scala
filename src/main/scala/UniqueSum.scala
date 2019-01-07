@@ -7,7 +7,7 @@ object UniqueSum extends App {
       sum += num2
     }
     if(num1 != num3 && num2 != num3){
-      sum+= num3
+      sum += num3
     }
 
     print(sum)
