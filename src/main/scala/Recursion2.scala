@@ -6,8 +6,9 @@ object Recursion2 extends App {
     println(word*times)
     count +=1
 
-    if(count<times) recur(word,times)
-
+    if(count<times){
+      recur(word,times)
+    }
   }
 
   recur("h",5)
