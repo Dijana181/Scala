@@ -22,15 +22,23 @@ object arrays extends App{
     //list = list + arrayA.head
   //}
 
-  val arrayA:Array[Int] = Array(1, 2, 3, 1, 1, 1)
+  val arrayA:Array[Int] = Array(1, 2, 3, 1, 1)
 
-  val min = arrayA.reduceLeft( _ min _ )
+  for(i <- 0 to 4) {
+    for (j <- 0 to 4) {
+      if(i != j ) clash(arrayA(i), arrayA(j))
+      }
+    }
 
-  print(min)
 
+  def clash(num1:Int, num2:Int){
+    if (num1 == num2) {
+      print(num1)
+      sys.exit()
+    }
 
+  }
 
-  for(x <- arrayA) yield (x)
 
 
 }
