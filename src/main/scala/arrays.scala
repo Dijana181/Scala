@@ -24,11 +24,10 @@ object arrays extends App{
 
   val arrayA:Array[Int] = Array(1, 2, 3, 1, 1)
 
-  for(i <- 0 to 4) {
-    for (j <- 0 to 4) {
+  for(i <- 0 to 4 ; j <- 0 to 4) {
       if(i != j ) clash(arrayA(i), arrayA(j))
       }
-    }
+
 
 
   def clash(num1:Int, num2:Int){
