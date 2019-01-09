@@ -10,7 +10,7 @@ object NumberCheck extends App {
     for(i <- 0 until num2.length by -2){
       num3 =  num2.substring(i,i+1)
       num3.toInt
-      sum = sum+(num3)
+      sum = sum +(num3)
       num3 =0
     }
 
