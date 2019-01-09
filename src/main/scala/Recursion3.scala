@@ -1,7 +1,6 @@
 object Recursion3 extends App {
-  var count = 1
 
-  def recur(three:String,five:String,times:Int){
+  def recur(three:String,five:String,times:Int, count:Int=1){
     if(count<=times){
       println(count)
       if(count%3==0||count%5==0){
@@ -15,9 +14,9 @@ object Recursion3 extends App {
           println(three+five)
         }
       }
-      count += 1
+      recur(three,five,times, count+1)
     }
-    recur(three,five,times)
+
   }
 
   recur("three","five",15)
