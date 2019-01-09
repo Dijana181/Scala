@@ -1,4 +1,4 @@
-object arrays extends App{
+object Arrays extends App{
 
  //First method
 
