@@ -18,7 +18,6 @@ object Factor extends App {
 
         count = count + 1
       }
-
       print(count)
 
     }
