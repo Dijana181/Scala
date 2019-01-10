@@ -24,10 +24,11 @@ object NumberCheck extends App {
     }
 print(sum)
   }
+
+  def valid(num:Int):Unit = {
+
+  }
 addDigit(5555555)
 }
 
-def valid(num:Int):Unit = {
 
-}
-}
