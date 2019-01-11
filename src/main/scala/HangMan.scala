@@ -12,6 +12,7 @@ object HangMan extends App {
   }
 
 
+
   def correctLetter (letter:String, word:String): Unit = {
     var correctLetters = ""
     for (i <- 0 until word.length) {
