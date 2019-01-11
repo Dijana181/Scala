@@ -1,6 +1,5 @@
-import scala.io.Source
 import scala.util.Random
-import scala.collection.mutable.ArrayBuffer
+import scala.io.Source
 
 object HangMan extends App {
 
@@ -9,6 +8,18 @@ object HangMan extends App {
     val wordArray = Source.fromFile("/Users/Admin/Documents/DijanR/scala/enable1.txt").getLines.toArray
     val word = wordArray(random.nextInt(wordArray.length))
     word
+  }
+
+  var word = getWord()
+  println(s"Please guess the following word")
+  println("_ "*(word.length))
+  println(("\n")*4)
+
+  guess()
+
+  def guess(word:String=word): Unit ={
+    var letter = readLine("Insert your letter: ")
+    correctLetter(word,letter)
   }
 
   def correctLetter (letter:String, word:String): Unit = {
@@ -37,7 +48,7 @@ object HangMan extends App {
     attempts(correct,word)
   }
 
-  def attempts(correct:Boolean, word:String): Int = {
+  def attempts(correct:Boolean, word:String): Unit = {
     var count = 5
     if (!correct) (count=count- 1)
 
@@ -49,16 +60,8 @@ object HangMan extends App {
       println(s"Sorry you have lost the game. The word was $word")
       sys.exit()
     }
-    count
+    guess()
   }
 
-  def guess (letter:String): Unit ={
-    var word = getWord()
-    println(s"Please guess the following word")
-    println("_ "*(word.length))
-    println(("\n")*4)
-
-    correctLetter(letter,word)
-  }
 
 }
