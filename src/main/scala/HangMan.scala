@@ -11,52 +11,54 @@ object HangMan extends App {
     word
   }
 
-
-
   def correctLetter (letter:String, word:String): Unit = {
-    var correctLetters = ""
+    var correctLetters = " "
     for (i <- 0 until word.length) {
-      if (i == letter) {
+      if (word.substring(i, i + 1) == letter) {
         correctLetters += letter
-        attempts(true, word)
       }
-      else attempts(false, word)
     }
-    print(correctLetters, word)
+      printer(correctLetters, word)
   }
 
   def printer(letters:String, word:String):Unit= {
+    var correct = false
     for(i <- 0 until letters.length; j<- 0 until word.length){
       if(letters.substring(i,i+1) == word.substring(j,j+1)){
-        print(letters.substring(i+i+1))
+        print(letters.substring(i,i+1))
+        print(" ")
+        correct = true
       }
       else{
-        print("_")
+        print("_ ")
       }
     }
+    println("")
+    attempts(correct,word)
   }
 
-
-  def attempts(correct:Boolean, word:String): Boolean = {
+  def attempts(correct:Boolean, word:String): Int = {
     var count = 5
-    if (!correct) count - 1
+    if (!correct) (count=count- 1)
+
     if (count > 1) {
-      print(s"You have $count more attempts")
-      true
+      println(s"You have $count more attempts")
+      count
     }
     else {
-      print(s"Sorry you have lost the game. The word was $word")
-      false
+      println(s"Sorry you have lost the game. The word was $word")
+      sys.exit()
     }
+    count
   }
 
-def guess (letter:String): Unit ={
-  var word = getWord()
-  println(s"Please guess the following word")
-  println("_ "*(word.length))
+  def guess (letter:String): Unit ={
+    var word = getWord()
+    println(s"Please guess the following word")
+    println("_ "*(word.length))
+    println(("\n")*4)
 
-  correctLetter(letter,word)
-}
+    correctLetter(letter,word)
+  }
 
-  guess
 }
