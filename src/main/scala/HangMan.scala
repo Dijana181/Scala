@@ -63,5 +63,4 @@ object HangMan extends App {
     guess()
   }
 
-
 }
