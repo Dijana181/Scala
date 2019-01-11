@@ -11,5 +11,6 @@ object PrimeNumbers extends App {
     println(s"There are $count prime numbers")
   }
 
+
 Prime(23)
 }
