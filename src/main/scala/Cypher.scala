@@ -18,7 +18,6 @@ object Cypher extends App {
     for (i<- 0 until word.length){
      newWord+= lookUp(word.substring(i,i+1))
     }
-
     print(newWord)
 
   }
