@@ -17,6 +17,7 @@ object Factor extends App {
       print(s"$factorial !")
       sys.exit()
     }
+
   }
 
   factorial(479001600)
