@@ -13,67 +13,42 @@ object HangMan extends App {
 
   var word = getWord()
   println(s"Please guess the following word")
-  println("_ "*(word.length))
+  var arraya = ArrayBuffer[String]()
+  for (i <- 0 until word.length) {
+    arraya += "_ "
+  }
+  println(arraya)
   println(("\n")*4)
-
   guess()
 
-  def guess(word:String=word): Unit ={
+  def guess(word:String=word): String ={
     var letter = readLine("Insert your letter: ")
-
-
+    printer(word,letter)
+    letter
   }
 
-  //def correctLetter (letter:String, word:String): Unit = {
-    //var correctLetters = " "
-    //for (i <- 0 until word.length) {
-      //if (word.substring(i,i+1) == letter) {
-       // correctLetters += letter
-      //}
-   // }
-      //printer(correctLetters, word)
-  //}
-
-  def printer (letter:String=guess(), word:String):Unit= {
-   // var correct = false
-    //for (i <- 0 until letters.length; j <- 0 until word.length) {
-      //if (letters.substring(i, i + 1) == word.substring(j, j + 1)) {
-        //print(letters.substring(i, i + 1))
-        //print(" ")
-        //correct = true
-      //}
-      //else print("_ ")
-
-    //}
-    //println("")
-    //attempts(correct, word)
-
-    var arraya = ArrayBuffer[String]()
-
+ def printer(word:String=word, letter:String=guess()){
+   var correct = false
     for (i <- 0 until word.length) {
-      arraya += word.substring(i, i + 1)
+      if (word.substring(i,i+1) == letter){
+        arraya(i) = letter
+      correct = true}
     }
-
-    for (i <- 0 until word.length) {
-      if (arraya(i) == letter)
-        arraya(i) == letter
-    }
+    print(arraya)
+   attempts(correct, word)
   }
-
-
-
   def attempts(correct:Boolean, word:String): Unit = {
     var count = 5
-    if (!correct) (count=count-1)
-
-    if (count > 1) {
+    if (!correct){
+      (count=count-1)
+      if (count > 0) {
       println(s"You have $count more attempts")
       count
-    }
-    else {
+    } else {
       println(s"Sorry you have lost the game. The word was $word")
       sys.exit()
-    }
+    }}
+
     guess()
   }
 
