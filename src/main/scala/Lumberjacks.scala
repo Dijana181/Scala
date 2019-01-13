@@ -18,6 +18,7 @@ object Lumberjacks extends App {
     logs =logs-1
   }
 
+
   for(i <- 0 until Row1.length) print(Row1(i))
   print("\n")
   for(i<- 0 until Row2.length) print(Row2(i))
