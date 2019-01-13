@@ -4,14 +4,16 @@ object Lumberjacks extends App {
   var Row2 = Array(2,1,3)
   var Row3 = Array(1,4,1)
   var Storage = Array(Row1, Row2, Row3)
-  var logs = 5
+
+  var logs = 7
   var min = 1
 
   while(min<=9){
     stock()
     min = min + 1
-
   }
+
+
 
 
 def stock(){
@@ -25,8 +27,8 @@ def stock(){
       }
     }
   }
-
 }
+
 
   for(i <- 0 until Row1.length) print(Row1(i))
   print("\n")
