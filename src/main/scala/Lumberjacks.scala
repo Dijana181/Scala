@@ -8,19 +8,19 @@ object Lumberjacks extends App {
   var min = 1
 
   while(min<=9){
-    counter()
-    min = min +1
+    stock()
+    min = min + 1
 
   }
 
 
-def counter() {
+def stock(){
   for (row <- Storage) {
     for (i <- 0 until row.length) {
       if (row(i) == min) {
         if(logs > 0) {
           row(i) += 1
-          logs = logs-1
+          logs -=1
         }
       }
     }
