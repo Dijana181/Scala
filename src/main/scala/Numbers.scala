@@ -22,6 +22,4 @@ object Numbers extends App {
    // }
   //}
 
-
-
 }
