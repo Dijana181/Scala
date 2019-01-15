@@ -10,7 +10,6 @@ object Cypher extends App {
 
   }
 
-
   def reassignment(word:String): Unit ={
 
     var newWord = ""
